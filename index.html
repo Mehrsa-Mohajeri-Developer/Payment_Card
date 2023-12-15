@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Card</title>
+    <style>
+        body {
+            background-color: #212121;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: #ae1a1a;
+            width: 350px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px rgb(0, 0, 0);
+            margin: 100px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            transform-origin: center;
+            position: relative;
+            transition: 1s;
+
+            >section {
+                width: 100%;
+                height: 100%;
+                background-color: #b7b7b7;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 10px;
+                opacity: 0;
+
+                >div:nth-of-type(1) {
+                    width: 100%;
+                    height: 40px;
+                    background-color: #292929;
+                    margin-top: 40px;
+                }
+
+                >div:nth-of-type(2) {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 15px;
+
+                    >label {
+                        width: 100%;
+                        text-align: end;
+                        margin-bottom: 5px;
+                        margin-right: 25px;
+                        font-size: 13px;
+                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                    }
+
+                    >div {
+                        width: 90%;
+                        height: 30px;
+                        border-radius: 5px;
+                        background-color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                    }
+                }
+            }
+
+            >figure {
+                width: 90%;
+                height: 30px;
+
+                >img {
+                    width: 100px;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            >div:nth-of-type(1) {
+                width: 90%;
+                height: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+                font-weight: bolder;
+
+                >div {
+                    width: 70px;
+                    height: 100%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px;
+                    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                }
+            }
+
+            >div:nth-of-type(2) {
+                width: 90%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+                >.name {
+                    width: fit-content;
+
+
+                    >h5 {
+                        font-size: 13px;
+                        font-weight: lighter;
+                    }
+
+                    >div {
+
+                        min-width: 30px;
+                        height: 20px;
+                        text-transform: capitalize;
+                        font-weight: bold;
+                    }
+                }
+
+                >.valid {
+                    width: fit-content;
+
+                    font-size: 15px;
+
+                    >h5 {
+                        font-size: 13px;
+                        font-weight: lighter;
+                    }
+
+                    >div {
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 20px;
+                        min-width: 20px;
+
+                        >div {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        .inp {
+            width: 350px;
+            /* border: 2px solid white; */
+            margin: 100px auto;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            color: #b7b7b7;
+
+            >div:nth-of-type(1) {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                >label {
+                    width: 100%;
+                    margin-bottom: 5px;
+                    margin-left: 5px;
+                }
+
+                >input {
+                    width: 80px;
+                    height: 30px;
+                    background-color: #b7b7b7;
+                    margin-left: 5px;
+                    text-align: center;
+                }
+            }
+
+            >div:nth-of-type(2) {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 20px;
+
+                >label {
+                    width: 100%;
+                    margin-bottom: 5px;
+                    margin-left: 5px;
+                }
+
+                >input {
+                    min-width: 80px;
+                    height: 30px;
+                    background-color: #b7b7b7;
+                    margin-left: 5px;
+                    text-align: center;
+                }
+            }
+
+            >div:nth-of-type(3) {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 20px;
+
+                >div:nth-of-type(1) {
+                    width: 50%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-self: start;
+                    align-items: center;
+
+                    >label {
+                        width: 100%;
+                        margin-bottom: 5px;
+                        margin-left: 5px;
+                    }
+
+                    >div {
+                        min-width: 80px;
+                        margin-left: 5px;
+                        background-color: #b7b7b7;
+                        outline: 1px solid rgb(103, 103, 103);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                        text-align: center;
+                        color: black;
+
+                        >div {
+                            min-width: 40px;
+                            height: 28px;
+                            text-align: center;
+                            line-height: 30px;
+                            color: black;
+                        }
+                    }
+                }
+
+                >div:nth-of-type(2) {
+                    width: 50%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-self: start;
+                    align-items: center;
+
+                    >label {
+                        width: 100%;
+                        margin-bottom: 5px;
+                        margin-left: 5px;
+                    }
+
+                    >input {
+                        width: 80px;
+                        height: 30px;
+                        background-color: #b7b7b7;
+                        margin-left: 5px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <section id="behind">
+            <div></div>
+            <div>
+                <label>CVV2</label>
+                <div id="cvv2num"></div>
+            </div>
+        </section>
+        <figure><img src="2.jpg" alt=""></figure>
+        <div id="cardnum2">
+            <div></div>
+            -
+            <div></div>
+            -
+            <div></div>
+            -
+            <div></div>
+        </div>
+        <div>
+            <div class="name">
+                <h5>Card Holder</h5>
+                <div></div>
+            </div>
+            <div class="valid">
+                <h5>Valid Till</h5>
+                <div id="valid">
+                    <div></div>/<div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inp">
+        <div id="cardnum">
+            <label>Card Number</label>
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+        </div>
+        <div>
+            <label>Card Holder's Name</label>
+            <input id="name" type="text" spellcheck="false">
+        </div>
+        <div>
+            <div>
+                <label>Valid Till</label>
+                <div id="validnum">
+                    <div contenteditable="true"></div>/<div contenteditable="true"></div>
+                </div>
+            </div>
+            <div>
+                <label>CVV2</label>
+                <input id="cvv2" type="text">
+            </div>
+        </div>
+    </div>
+    <script src="master.js"></script>
+</body>
+
+</html>
